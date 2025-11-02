@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Lora, Poppins } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +11,19 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const lora = Lora({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-lora', // Esta é a variável usada no tailwind.config.js
+})
+
+// 2. Defina a fonte de corpo (sans)
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+  variable: '--font-poppins', // Esta é a variável usada no tailwind.config.js
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lora.variable} ${poppins.variable} antialiased`}
       >
         {children}
       </body>
