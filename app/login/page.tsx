@@ -25,22 +25,11 @@ export default async function LoginPage() {
       {/* Imagem de fundo (apenas em telas médias+) */}
       {/* h-screen: Força o contêiner da imagem a ter 100% da altura do viewport no desktop */}
       <div className="hidden md:flex md:w-1/2 relative h-screen bg-muted">
-        <Image
+        <img
           // CORREÇÃO: Usando o nome do arquivo que você enviou (image_25f90e.png)
-          src="/image_25f90e.png"
+          src={"https://i.ibb.co/Xk5j7hDD/10778436.jpg"}
           alt="Ambiente acolhedor de uma cafeteria com luz natural e mesas de madeira"
-          fill
-          priority
-          className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 flex flex-col items-center justify-center p-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">
-            Coffee House
-          </h1>
-          <p className="text-lg text-white/90 max-w-md leading-relaxed">
-            O lugar perfeito para saborear cada gole com tranquilidade e estilo.
-          </p>
-        </div>
       </div>
 
       {/* Formulário de Login */}
@@ -83,7 +72,7 @@ export default async function LoginPage() {
           </Card>
 
           <div className="mt-8 text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Coffee House. Todos os direitos reservados.
+            © {new Date().getFullYear()} AutenticaAI. Todos os direitos reservados.
           </div>
         </div>
       </div>

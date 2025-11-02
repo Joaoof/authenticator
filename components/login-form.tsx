@@ -8,8 +8,12 @@ import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { AlertCircle } from "lucide-react"
 
+type LoginState = {
+  error?: string;
+};
+
 export function LoginForm() {
-  const [state, formAction, isPending] = useActionState(loginAction, null)
+  const [state, formAction, isPending] = useActionState<LoginState>(loginAction as any, { error: undefined })
 
   return (
     <form action={formAction} className="space-y-4">
@@ -47,10 +51,6 @@ export function LoginForm() {
       <Button type="submit" className="w-full" disabled={isPending}>
         {isPending ? "Entrando..." : "Entrar"}
       </Button>
-
-      <div className="text-xs text-muted-foreground bg-muted p-3 rounded-md">
-        <strong>Usuário de teste:</strong> admin / admin123
-      </div>
     </form>
   )
 }
