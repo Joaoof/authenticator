@@ -4,8 +4,6 @@ import { LogoutButton } from "@/components/logout-button"
 import { User, Shield, Clock } from "lucide-react"
 
 export default async function DashboardPage() {
-  const user = await requireAuth()
-
   return (
     <div className="min-h-screen bg-muted/50">
       <header className="border-b bg-background">
@@ -17,7 +15,7 @@ export default async function DashboardPage() {
 
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold mb-2">Bem-vindo, {user.name}!</h2>
+          <h2 className="text-3xl font-bold mb-2">Bem-vindo, {}!</h2>
           <p className="text-muted-foreground">Você está autenticado no sistema</p>
         </div>
 
@@ -28,7 +26,7 @@ export default async function DashboardPage() {
               <User className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{user.username}</div>
+              <div className="text-2xl font-bold">{}</div>
               <p className="text-xs text-muted-foreground mt-1">Nome de usuário ativo</p>
             </CardContent>
           </Card>

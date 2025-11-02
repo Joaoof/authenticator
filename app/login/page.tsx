@@ -1,3 +1,5 @@
+// joaoof/authenticator/authenticator-5907e12f4b91c77facd89083cf831678601d02bf/app/login/page.tsx
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { LoginForm } from "@/components/login-form";
 import { getSession } from "@/lib/auth";
@@ -13,6 +15,7 @@ export default async function LoginPage() {
   }
 
   return (
+    // min-h-screen: Garante que o contêiner principal ocupe 100% da altura
     <div className="min-h-screen flex flex-col md:flex-row bg-background">
       {/* Mobile Header (apenas em telas pequenas) */}
       <div className="md:hidden flex items-center justify-center py-6 bg-primary/5">
@@ -20,9 +23,11 @@ export default async function LoginPage() {
       </div>
 
       {/* Imagem de fundo (apenas em telas médias+) */}
-      <div className="hidden md:flex md:w-1/2 relative bg-muted">
+      {/* h-screen: Força o contêiner da imagem a ter 100% da altura do viewport no desktop */}
+      <div className="hidden md:flex md:w-1/2 relative h-screen bg-muted">
         <Image
-          src="/coffee-shop-interior.jpg"
+          // CORREÇÃO: Usando o nome do arquivo que você enviou (image_25f90e.png)
+          src="/image_25f90e.png"
           alt="Ambiente acolhedor de uma cafeteria com luz natural e mesas de madeira"
           fill
           priority
@@ -39,6 +44,7 @@ export default async function LoginPage() {
       </div>
 
       {/* Formulário de Login */}
+      {/* w-full md:w-1/2: Garante que o formulário ocupe a outra metade da tela no desktop */}
       <div className="flex flex-col justify-center items-center w-full md:w-1/2 p-4 md:p-8 bg-background">
         <div className="w-full max-w-md">
           {/* Desktop Title (escondido em mobile) */}
